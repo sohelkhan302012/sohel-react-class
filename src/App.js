@@ -22,11 +22,11 @@ function App() {
     
     <div className="flex justify-between flex-wrap mx-4 gap-y-3">
       <div className="sm:w-4/12 w-full px-4">
-      <div className="box-1"></div></div>
+      <div className="box-1 bg-[red] md:bg-[green]"></div></div>
       <div className=" sm:w-4/12 w-full px-4">
-      <div className="box-1"></div></div>
+      <div className="box-1 bg-[red] md:bg-[green]"></div></div>
       <div className="sm:w-4/12  w-full px-4">
-      <div className="box-1"></div></div>
+      <div className="box-1 bg-[red] md:bg-[green]"></div></div>
     </div>
   );
 }
