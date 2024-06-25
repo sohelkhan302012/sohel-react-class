@@ -1,7 +1,11 @@
 import React from "react";
-import logo from '../images/favicon.svg'
+import { useState } from "react";
+import logo from '../images/favicon.svg';
+
 function Header(){
-    return (
+  const [toggle, setToggle] = useState(false)
+  const [toggle2, setToggle2] = useState(false)
+      return (
         <header class="sticky top-0 z-40 bg-white">
         <div class="main-wrapper">
           <nav class="lg:flex items-center justify-between">
@@ -35,7 +39,8 @@ function Header(){
               </span>
             </a>
             <div class="items-center hidden lg:flex w-full" id="toggle-menu">
-              <ul class="mx-auto lg:flex gap-x-7 xl:gap-x-14">
+            
+                <ul class="mx-auto lg:flex gap-x-7 xl:gap-x-14">
                 <li>
                   <a
                     href="/"
@@ -43,11 +48,12 @@ function Header(){
                     >Home</a
                   >
                 </li>
-                <li>
+                <li class="relative">
                   <a
                     href="#"
-                    onclick="dropdown1()"
+                   
                     class="text-xl font-medium text-[#272727] block py-2.5 drop-1 relative hover:text-[#39DB4A]"
+                    onClick={() => setToggle(!toggle)}
                     >Menu
                     <svg
                       xmlns="http://www.w3.org/2000/svg"
@@ -71,72 +77,75 @@ function Header(){
                       />
                     </svg>
                   </a>
-                  <ul
-                    class="bg-[#39DB4A] py-3 px-4 rounded-md dropdown-1 lg:absolute top-16 list-decimal"
-                    id="myDropdown1"
-                  >
-                    <li>
-                      <a
-                        href="#"
-                        class="text-base font-regular text-[#272727] block"
-                        >Breakfast</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        class="text-base font-regular text-[#272727] block"
-                        >Launch</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        class="text-base font-regular text-[#272727] block"
-                        >Dinner</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        class="text-base font-regular text-[#272727] block"
-                        >Kids</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        class="text-base font-regular text-[#272727] block"
-                        >party</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        class="text-base font-regular text-[#272727] block"
-                        >birth day</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        class="text-base font-regular text-[#272727] block"
-                        >festival</a
-                      >
-                    </li>
-                    <li>
-                      <a
-                        href="#"
-                        class="text-base font-regular text-[#272727] block"
-                        >spacial</a
-                      >
-                    </li>
-                  </ul>
+                 {toggle && (
+                   <ul
+                   class="bg-[#39DB4A] py-3 px-4 rounded-md   top-16  absolute"
+                   
+                 >
+                   <li>
+                     <a
+                       href="#"
+                       class="text-base font-regular text-[#272727] block"
+                       >Breakfast</a
+                     >
+                   </li>
+                   <li>
+                     <a
+                       href="#"
+                       class="text-base font-regular text-[#272727] block"
+                       >Launch</a
+                     >
+                   </li>
+                   <li>
+                     <a
+                       href="#"
+                       class="text-base font-regular text-[#272727] block"
+                       >Dinner</a
+                     >
+                   </li>
+                   <li>
+                     <a
+                       href="#"
+                       class="text-base font-regular text-[#272727] block"
+                       >Kids</a
+                     >
+                   </li>
+                   <li>
+                     <a
+                       href="#"
+                       class="text-base font-regular text-[#272727] block"
+                       >party</a
+                     >
+                   </li>
+                   <li>
+                     <a
+                       href="#"
+                       class="text-base font-regular text-[#272727] block"
+                       >birth day</a
+                     >
+                   </li>
+                   <li>
+                     <a
+                       href="#"
+                       class="text-base font-regular text-[#272727] block"
+                       >festival</a
+                     >
+                   </li>
+                   <li>
+                     <a
+                       href="#"
+                       class="text-base font-regular text-[#272727] block"
+                       >spacial</a
+                     >
+                   </li>
+                 </ul>
+                 )} 
+                
                 </li>
                 <li>
                   <a
                     href="#"
-                    onclick="dropdown2()"
+                    onClick={() => setToggle2(!toggle2)}
                     class="text-xl font-medium text-[#272727] block py-2.5 drop-2 relative hover:text-[#39DB4A]"
                     >Services
                     <svg
@@ -161,9 +170,10 @@ function Header(){
                       />
                     </svg>
                   </a>
-                  <ul
-                    class="bg-[#39DB4A] py-3 px-4 rounded-md dropdown-2 lg:absolute top-16"
-                    id="myDropdown2"
+                  {toggle2 && (
+                    <ul
+                    class="bg-[#39DB4A] py-3 px-4 rounded-md absolute top-16"
+                    
                   >
                     <li>
                       <a
@@ -208,6 +218,8 @@ function Header(){
                       >
                     </li>
                   </ul>
+                  )}
+                  
                 </li>
                 <li>
                   <a
